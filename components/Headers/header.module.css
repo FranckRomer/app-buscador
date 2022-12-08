@@ -1,0 +1,30 @@
+.header {
+    display: flex;
+    justify-content: right;
+    background-color: #ffdd57;
+}
+
+.header a {
+    transition: font 1s;
+    margin: 1rem 2.5rem;
+    color: black;
+}
+
+.header h4 {
+    font-weight: normal;
+
+}
+
+.header h3 {
+    border-bottom: 1px solid black;
+}
+
+.header h4:hover {
+    font-weight: bold;
+}
+
+@media only screen and (max-width : 620px) {
+    .header a{
+        margin: 1rem 1rem;
+    }
+}
