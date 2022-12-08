@@ -8,7 +8,6 @@ export default function Home() {
   const [equipo, setEquipo] = React.useState([])
   const [searchValue, setSearchValue] = React.useState('');
 
-
   React.useEffect(() => {
     obtenerDatos()
   })

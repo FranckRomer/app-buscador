@@ -6,7 +6,7 @@ const Header = (props: any) => {
     return (
         <div className={styles.header}>
             <Link href={"/"}>
-                {props.tipo == "home" ? <h3>Home</h3> : <h4>Home</h4>}
+                {props.tipo == "home" ? <h3>Inicio</h3> : <h4>Inicio</h4>}
             </Link>
             <Link href={"/diagnostico"}>
                 {props.tipo == "diagnostico" ? <h3>Diagnostico</h3> : <h4>Diagnostico</h4>}
