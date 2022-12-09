@@ -1,0 +1,61 @@
+.tabla_contain {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.tabla {
+    width: 100%;
+    height: 30rem;
+    overflow: scroll;
+}
+
+.tabla_head,
+.tabla_main {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    align-items: center;
+}
+
+.tabla_head {
+    background-color: black;
+    position: -webkit-sticky;
+    position: sticky;
+    top: -1px;
+    border-bottom: 1px solid aliceblue;
+}
+.tabla_main button{
+    width: 3rem;
+    height: 2rem;
+    margin: auto;
+
+}
+
+/* --------------- */
+
+.tabla::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+
+/* Track */
+.tabla::-webkit-scrollbar-track {
+    /* background: #f1f1f1; */
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+.tabla::-webkit-scrollbar-thumb {
+    /* background: #888; */
+    background: #ffdd57;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.tabla::-webkit-scrollbar-thumb:hover {
+    background: firebrick;
+    width: 1rem;
+}
