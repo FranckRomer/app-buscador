@@ -3,6 +3,7 @@ import Header from '../../components/Headers/header'
 import Tables from '../../components/Tables/Show/tables'
 import styles from "./trainz.module.css"
 
+
 const TrainZ = () => {
     const [tablas, setTablas] = useState("bia")
 

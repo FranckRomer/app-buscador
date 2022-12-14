@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import styles from "./tables.module.css"
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Tables = (props: any) => {
     const [tabla, setTabla] = useState([])
@@ -77,13 +78,28 @@ const Tables = (props: any) => {
                             <p>{item.numero_serie}</p>
                             <p>{item.proyect}</p>
                             <p>{item.ruta}</p>
-                            <p>✅</p>
+                            <p>{item.hearbit ? "✅" : "❌"}</p>
                             <p>{item.fecha_hora}</p>
-                            <button><Link href={"/"}></Link></button>
-                            <button><Link href={"/"}></Link></button>
-                            
+                            <div>
+                                <Image
+                                    src="/icons/ultra-secreto.png"
+                                    alt="Registro Completo"
+                                    width={40}
+                                    height={40}
+                                />
+                            </div>
+                            <div>
+                                <Image
+                                    src="/icons/big-data.png"
+                                    alt="Registro Completo"
+                                    width={40}
+                                    height={40}
+                                />
+
+                            </div>
+
                             {/* <p>{JSON.stringify(item)}</p> */}
-                           
+
                         </div>
                     ))}
                 </div>

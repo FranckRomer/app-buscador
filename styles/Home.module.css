@@ -8,6 +8,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: born 2.5s;
 }
 .main h2{
   margin: 0;
@@ -104,4 +105,14 @@
   margin: 0.2rem 1rem;
 }
 
+
+@keyframes born {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
 

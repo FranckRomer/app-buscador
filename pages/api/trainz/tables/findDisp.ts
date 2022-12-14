@@ -1,4 +1,5 @@
 import { FindData } from "../../../../crud/crud"
+var moment = require('moment');
 
 ////////////////////////////////////////////////////////////////
 export default async function findDisp(req: any, res: any) {
@@ -7,7 +8,7 @@ export default async function findDisp(req: any, res: any) {
     const tipo = body.tipo                          // TIEMPO_REAL || STATUS
     const numero_serial = body.numero_serial
     if (clase == undefined || tipo == undefined) {
-        res.status(401).json("No Found") 
+        res.status(401).json("No Found")
     }
     // console.log("--------------------- Consulta de " + clase + " con " + tipo + " ---------------------");
     let proyect = "trainz"
@@ -20,9 +21,24 @@ export default async function findDisp(req: any, res: any) {
     }
     let result = await FindData(querys, proyect, collection)
     // console.log(result);
-    
+
     result = sortJSON(result, 'unidad', 'asc');
-    // result = sortJSON(result, 'can', 'asc');
+
+    var hoy = moment().utcOffset("-6:00");
+    for (let i = 0; i < result.length; i++) {
+        result[i].hoy = hoy
+        var date1 = moment(hoy);
+        var date2 = moment(result[i].fecha_hora);
+        var diff = date1.diff(date2);
+
+        // console.log(diff)
+
+        if (diff >= 120000) {
+            result[i].hearbit = false
+        } else {
+            result[i].hearbit = true
+        }
+    }
     // console.log(result);
     res.status(200).json(result)
 }

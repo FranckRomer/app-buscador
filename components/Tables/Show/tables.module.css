@@ -15,16 +15,38 @@
 .tabla_head,
 .tabla_main {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    
+    /* max-width: 20rem; */
+    grid-template-columns: 5rem 15rem 15rem 10rem 5rem 10rem 10rem 10rem;
     align-items: center;
+    /* justify-content: center; */
+    gap: auto;
 }
 
 .tabla_head {
+    width: fit-content;
     background-color: black;
     position: -webkit-sticky;
     position: sticky;
     top: -1px;
     border-bottom: 1px solid aliceblue;
+    align-items: center;
+}
+.tabla_main{
+    align-items: center;
+}
+.tabla_head h4,.tabla_main p, .tabla_main div{ 
+    border-right: 1px solid aliceblue;
+    min-width: 5rem;
+    min-height: 2.5rem;
+    width: auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    /* align-items: center; */
+    /* margin: .5rem; */
+    /* overflow-x: auto; */
 }
 .tabla_main button{
     width: 3rem;
@@ -34,7 +56,11 @@
 }
 
 /* --------------- */
-
+.tabla_main p::-webkit-scrollbar{
+    /* width: 0; */
+    height: 0;
+}
+/* =------------------------------------------ */
 .tabla::-webkit-scrollbar {
     width: 0.5rem;
 }
@@ -59,3 +85,5 @@
     background: firebrick;
     width: 1rem;
 }
+
+
