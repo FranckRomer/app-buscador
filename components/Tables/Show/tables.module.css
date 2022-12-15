@@ -1,3 +1,23 @@
+.buscador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buscador input{
+    width: 10rem;
+    margin-left: 1rem;
+    border: 0;
+    border-bottom: 1px solid #ffdd57;
+    background-color: transparent;
+    color: aliceblue;
+    text-align: center  ;
+}
+.buscador input:focus{
+    outline: none;
+    box-shadow: inset;
+}
+
+
 .tabla_contain {
     width: 100%;
     height: 100%;
@@ -55,11 +75,7 @@
 
 }
 
-/* --------------- */
-.tabla_main p::-webkit-scrollbar{
-    /* width: 0; */
-    height: 0;
-}
+
 /* =------------------------------------------ */
 .tabla::-webkit-scrollbar {
     width: 0.5rem;

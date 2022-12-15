@@ -3,6 +3,8 @@ import axios from 'axios'
 import styles from "./tables.module.css"
 import Link from 'next/link'
 import Image from 'next/image'
+import ViewDocument from '../ViewDocument/ViewDocument'
+import Edit from '../Edit/edit'
 
 const Tables = (props: any) => {
     const [tabla, setTabla] = useState([])
@@ -80,15 +82,21 @@ const Tables = (props: any) => {
                             <p>{item.ruta}</p>
                             <p>{item.hearbit ? "✅" : "❌"}</p>
                             <p>{item.fecha_hora}</p>
-                            <div>
+                            <ViewDocument
+                                data = {item}
+                            />
+                            <Edit
+                                data = {item}
+                            />
+                            {/* <div>
                                 <Image
                                     src="/icons/ultra-secreto.png"
                                     alt="Registro Completo"
                                     width={40}
                                     height={40}
                                 />
-                            </div>
-                            <div>
+                            </div> */}
+                            {/* <div>
                                 <Image
                                     src="/icons/big-data.png"
                                     alt="Registro Completo"
@@ -96,7 +104,7 @@ const Tables = (props: any) => {
                                     height={40}
                                 />
 
-                            </div>
+                            </div> */}
 
                             {/* <p>{JSON.stringify(item)}</p> */}
 

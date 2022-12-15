@@ -4,9 +4,11 @@ var moment = require('moment');
 ////////////////////////////////////////////////////////////////
 export default async function findDisp(req: any, res: any) {
     let body = req.body
+    console.log(body);
+    
     const clase = body.clase                        //  BIA || CONTADOR ||  GPS
     const tipo = body.tipo                          // TIEMPO_REAL || STATUS
-    const numero_serial = body.numero_serial
+    const numero_serie = body.numero_serie
     if (clase == undefined || tipo == undefined) {
         res.status(401).json("No Found")
     }
@@ -14,11 +16,13 @@ export default async function findDisp(req: any, res: any) {
     let proyect = "trainz"
     const collection = clase.toLocaleUpperCase() + "_" + tipo
     let querys: any
-    if (numero_serial == undefined) {
+    if (numero_serie == undefined) {
         querys = ""
     } else {
-        querys = { numero_serie: numero_serial }
+        querys = { numero_serie: numero_serie }
     }
+    console.log(numero_serie);
+    
     let result = await FindData(querys, proyect, collection)
     // console.log(result);
 

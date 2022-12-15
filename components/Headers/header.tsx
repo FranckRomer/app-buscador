@@ -8,9 +8,9 @@ const Header = (props: any) => {
             <Link href={"/"}>
                 {props.tipo == "home" ? <h3>Inicio</h3> : <h4>Inicio</h4>}
             </Link>
-            <Link href={"/diagnostico"}>
+            {/* <Link href={"/diagnostico"}>
                 {props.tipo == "diagnostico" ? <h3>Diagnostico</h3> : <h4>Diagnostico</h4>}
-            </Link>
+            </Link> */}
             <Link href={"/trainz"}>
                 {props.tipo == "trainz" ? <h3>TrainZ</h3> : <h4>TrainZ</h4>}
             </Link>

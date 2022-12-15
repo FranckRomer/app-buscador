@@ -1,0 +1,147 @@
+.Imagen {
+    cursor: pointer;
+}
+
+.Dark {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* background-color: blue; */
+
+}
+
+.Dark {
+    width: 100vw;
+    height: 100vh;
+    cursor: pointer;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.Modal{
+    animation: born 1.3s linear;
+
+}
+
+.Datos {
+    max-width: 60vw;
+    height: 80vh;
+    background-color: #ffdd57;
+    cursor: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 10vh auto;
+    display: block;
+    color: black;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.Datos textarea {
+    width: 50vw;
+    height: 50vh;
+    font-size: 14px;
+    background-color: whitesmoke;
+}
+
+.boton_Aceptar button {
+    min-width: 120px;
+    height: 3rem;
+    color: aliceblue;
+    cursor: pointer;
+    margin: 1rem;
+    border-radius: 10px;
+    transition: all .35s;
+}
+
+.boton_Aceptar button:first-child {
+    border: 1px solid darkgreen;
+    background-color: darkgreen;
+}
+
+.boton_Aceptar button {
+    border: 1px solid red;
+    background-color: red;
+}
+
+.boton_Aceptar button:hover {
+    /* background-color: rgba(0, 0, 0, 0.8); */
+    background-color: aliceblue;
+    border: 0;
+    color: black;
+    font-weight: bold;
+}
+
+/* -------------------------------------------- */
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    /* opacity: .8; */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: aliceblue;
+    font-weight: bolder;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 45%;
+    animation: born .3s both;
+    /* transition: content .3s; */
+}
+
+.loader h1::after {
+    animation: cargando 1.3s infinite linear;
+    content: ".";
+
+}
+
+@keyframes cargando {
+    0% {
+        content: "CARGANDO .";
+    }
+    25%{
+        content: "CARGANDO . .";
+    }
+    
+    50% {
+        content: "CARGANDO . . .";
+        /* color: black; */
+    }
+    75%{
+        content: "CARGANDO . . . .";
+    }
+    
+    100% {
+        content: "CARGANDO . . . . .";
+        /* content: "B"; */
+    }
+}
+@keyframes born {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* -------------------------------------------- */
+@media only screen and (max-width: 680px) {
+    .Datos {
+        max-width: 85vw;
+    }
+
+    .Datos textarea {
+        width: 75vw;
+        font-size: 9px;
+    }
+}
