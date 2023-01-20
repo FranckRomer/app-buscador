@@ -22,7 +22,7 @@ const Tables = (props: any) => {
         try {
             const data = await axios.post('/api/trainz/tables/findDisp', parameters)
             setTabla(data.data)
-            console.log(data.data);
+            // console.log(data.data);
         } catch (error) {
             console.log("NO FUNCIONO");
         }
@@ -42,7 +42,7 @@ const Tables = (props: any) => {
         else {
             // console.log(el.element);
             try {
-                return el.numero_serie.toLowerCase().includes(searchValue) || el.unidad.toLowerCase().includes(searchValue)
+                return el.numero_serie.toLowerCase().includes(searchValue) || el.unidad.toLowerCase().includes(searchValue) || el.ruta.toLowerCase().includes(searchValue) || el.proyect.toLowerCase().includes(searchValue)
             } catch (error) {
                 return
             }
@@ -52,7 +52,7 @@ const Tables = (props: any) => {
     // ----------------------------------------------------------------------------------
     return (
         <div className={styles.tabla_contain}>
-            <h2>Registros Totales: {tabla.length}</h2>
+            <h2>Registros Totales: {filteredData.length}</h2>
             <div className={styles.buscador}>
                 <h3>Buscar:</h3>
                 <input

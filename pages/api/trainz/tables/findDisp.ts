@@ -4,7 +4,7 @@ var moment = require('moment');
 ////////////////////////////////////////////////////////////////
 export default async function findDisp(req: any, res: any) {
     let body = req.body
-    console.log(body);
+    // console.log(body);
     
     const clase = body.clase                        //  BIA || CONTADOR ||  GPS
     const tipo = body.tipo                          // TIEMPO_REAL || STATUS
@@ -21,7 +21,7 @@ export default async function findDisp(req: any, res: any) {
     } else {
         querys = { numero_serie: numero_serie }
     }
-    console.log(numero_serie);
+    // console.log(numero_serie);
     
     let result = await FindData(querys, proyect, collection)
     // console.log(result);

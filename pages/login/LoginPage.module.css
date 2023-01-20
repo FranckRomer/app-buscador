@@ -1,0 +1,105 @@
+.main {
+    min-height: 100vh;
+    overflow-y: hidden;
+}
+
+.selection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    height: 8rem;
+    border-bottom: 1px solid rgb(56, 56, 56);
+}
+
+.selection {
+    cursor: pointer;
+}
+
+.selection h1 {
+    text-decoration: dashed;
+}
+
+.selection h2 {
+    color: gray;
+    transition: all .5s;
+}
+
+.selection h2:hover {
+    color: aliceblue;
+    font-size: 2rem;
+}
+
+.principal {
+    max-width: 90vw;
+    margin: 1rem auto;
+    display: grid;
+    gap: 1px;
+    /* grid-template-columns: 50% 50%; */
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.img_contain {
+    /* border: 1px solid red; */
+    margin: auto;
+}
+
+.login {
+    margin: auto;
+    color: aliceblue;
+}
+.login form{
+    display: grid;
+    gap: 1rem;
+    /* border: 1px solid red; */
+
+}
+.login input{
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid gray;
+    margin: 0 1rem auto;
+    color: aliceblue;
+    cursor: pointer;
+    transition: all .5s;
+}
+.login input:focus{
+    border-color: #f9c015;
+    outline: none;
+    background-color: #121212;
+}
+.login input:hover{
+    border-color: #f9c015;
+    background-color: #121212;
+    
+}
+
+.login p{
+    margin: 1rem 0 auto ;
+}
+.login button{
+    height: 1.8rem;
+    border: 0;
+    margin: 1rem 0;
+    border-radius: 8px;
+    background-color: #121212;
+    color: aliceblue;
+    transition: all .35s;
+}
+.login button:hover{
+    background-color: #f9c015;
+    color: black;
+    /* width: 110%;
+    height: 110%; */
+    scale: 111%;
+}
+
+/* .login input:autofill {
+    border: 3px solid darkorange;
+} */
+
+.login input:-webkit-autofill {
+    border: 3px solid darkorange;
+    color: black;
+    background-color: aliceblue;
+}

@@ -18,6 +18,9 @@
   display: flex;
   align-items: center;
 }
+/* main{
+  border: 1px solid red;
+} */
 .buscador input{
   background-color: transparent;
   border: 0;

@@ -1,0 +1,25 @@
+/* .login{
+    margin: 1rem auto;
+}
+.form{
+    display: grid;
+}
+.form input{
+    width: 200px;
+    margin: 1rem auto;
+}
+.form button{
+    width: 180px;
+    height: auto;
+    margin: 1rem auto;
+} */
+
+.error h2{
+    border-bottom: 1px solid red;
+    /* color: red; */
+}
+.error p{
+    width: 280px;
+    margin: 1rem auto;
+    color: red;
+}

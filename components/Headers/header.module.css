@@ -1,12 +1,15 @@
 .header {
     display: flex;
-    justify-content: right;
+    justify-content: space-around;
     background-color: #ffdd57;
+}
+.header div{
+    display: flex;
 }
 
 .header a {
     transition: font 1s;
-    margin: 1rem 2.5rem;
+    margin: 1rem 1rem;
     color: black;
 }
 

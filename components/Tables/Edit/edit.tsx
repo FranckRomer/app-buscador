@@ -7,7 +7,6 @@ const Edit = (props: any) => {
   const [modal, setModal] = useState(false)
   const [newTodoValue, setNewTodoValues] = React.useState(JSON.stringify(props.data, null, 4))
   const [loader, setLoader] = useState(false)
-
   // useEffect(() => {
   //   obtenerDatos()
   // })
@@ -31,6 +30,19 @@ const Edit = (props: any) => {
     }
   }
 
+  //? -------------------------------------------------------------
+  const CambiarReg = ()=>{
+    console.log("HOla");
+    // console.log(newTodoValue);
+    //! AQUI VA EL LOGIN  Y LA CONFIRMACION DEL USUARIO
+  }
+  const onChange = (event:any) =>{
+    // Se toman los valores de VALUE y se guardan en la variable
+    // console.log(event.target.value)
+    setNewTodoValues(event.target.value)
+}
+
+
   return (
     <div>
       <section className={styles.Imagen} onClick={() => obtenerDatos()}>
@@ -49,11 +61,11 @@ const Edit = (props: any) => {
             </h2>
             <textarea
               placeholder="Espere en la carga de datos, si los datos no llegan reinicie con F5"
-              value={newTodoValue}
-            // onChange={onChange}
+              defaultValue={newTodoValue}
+              onChange = {onChange}
             ></textarea>
             <div className={styles.boton_Aceptar}>
-              <button className="boton_Add" type="submit" >CAMBIAR</button>
+              <button className="boton_Add" type="submit" onClick={()=>CambiarReg()}>CAMBIAR</button>
               <button className="boton_Cancel" type="button" onClick={() => setModal(false)}>NO ACTUALIZAR</button>
             </div>
             {/* <h1>box</h1>
