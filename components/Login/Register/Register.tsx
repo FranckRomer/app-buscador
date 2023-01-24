@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
+import styles from "../Login/Login.module.css"
 
 const Register = () => {
     const [Credencials, setCredencials] = React.useState({
@@ -8,7 +9,9 @@ const Register = () => {
         password: '',
         re_password:'',
         company:'',
+        cargo:''
     })
+    const [error, setError] = useState(false)
 
     const router = useRouter()
 
@@ -17,21 +20,40 @@ const Register = () => {
             ...Credencials,
             [e.target.name]: e.target.value
         })
+        setError(false)
     }
     const handleSubmit = async (e:any) =>{
+        setError(false)
         e.preventDefault()
         console.log(Credencials)
-        const response = await axios.post('/api/auth/login', Credencials)
-        console.log(response)
-
-        if (response.status === 200) {
-            router.push('/trainz')
+        if (Credencials.password === Credencials.re_password) {   
+            try {
+                const response = await axios.post('/api/auth/register', Credencials)
+                console.log(response)
+        
+                if (response.status === 201) {
+                    router.push('/login')
+                }                
+            } catch (error) {
+                console.log(error);
+                setError(true)                                
+            }     
+        }
+        else{
+            setError(true)
         }
     }
 
     // ?--------------------------
     return (
         <div>
+            {error ?
+                <div className={styles.error}>
+                    <h2>Error de Inicio</h2>
+                    <p>El usuario o contraseña no son correctos</p>
+                </div>
+                : ""
+            }
             <form onSubmit={handleSubmit}>
                 <p>Correo:</p>
                 <input
@@ -67,11 +89,11 @@ const Register = () => {
                     type="text"
                     placeholder='Cargo'
                     onChange={handleChange}                    
-                    onKeyUp={handleSubmit}
+                    // onKeyUp={handleSubmit}
                 />
 
                 
-                <button type="button">Crear</button>
+                <button type="button" onClick={handleSubmit}>Crear</button>
             </form>
         </div>
     )

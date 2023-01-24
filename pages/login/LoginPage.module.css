@@ -31,12 +31,18 @@
 }
 
 .principal {
+    width: 350px;
+    border-radius: 16px;
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    border: 1px solid rgb(170, 170, 170);
     max-width: 90vw;
     margin: 1rem auto;
     display: grid;
     gap: 1px;
     /* grid-template-columns: 50% 50%; */
-    border: 1px solid rgba(0, 0, 0, 0);
+    /* border: 1px solid rgba(0, 0, 0, 0); */
+    /* padding: 3rem 3rem; */
 }
 
 .img_contain {
@@ -102,4 +108,14 @@
     border: 3px solid darkorange;
     color: black;
     background-color: aliceblue;
+}
+.recuperar{
+    display: flex;
+    justify-content: center;
+    color: lightgray;
+}
+.recuperar a{
+    font-style: oblique;
+    text-decoration: underline;
+    color: aqua;
 }

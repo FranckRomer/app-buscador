@@ -29,8 +29,12 @@ const Login = () => {
                 router.push('/trainz')
             }
         } catch (error) {
+            setError(false)
             console.log(error);
-            setError(true)
+            setTimeout(() => {
+                console.log("1 Segundo esperado")
+                setError(true)
+            }, 150);
 
         }
 
@@ -42,7 +46,7 @@ const Login = () => {
                     <h2>Error de Inicio</h2>
                     <p>El usuario o contraseña no son correctos</p>
                 </div>
-                :""
+                : ""
             }
             <form onSubmit={handleSubmit} className={styles.form}>
                 <p>Correo:</p>
@@ -56,7 +60,8 @@ const Login = () => {
                 <input
                     name='password'
                     type="password"
-                    onKeyUp={handleSubmit}
+                    // onKeyUpCapture={handleSubmit}
+                    // onKeyUp={handleSubmit}
                     placeholder='password'
                     onChange={handleChange}
                 />

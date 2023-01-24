@@ -67,11 +67,11 @@ export default function Home() {
             onChange={onSearchValueChange}
           />
         </div>
-        
+
 
         {filteredData.length === 0 ? <h1>No hay datos con: {searchValue} </h1> : ""}
 
-        { filteredData.length !== 0 ?
+        {filteredData.length !== 0 ?
           <div className={styles.tabla}>
             <table>
               <thead>
@@ -115,11 +115,13 @@ export default function Home() {
               </tbody>
             </table>
           </div>
-        :""}
+          : ""}
       </main>
 
       <footer className={styles.footer}>
-        Create by <b>FranckRomer</b>
+        <p>
+          Create by <b>FranckRomer</b>
+        </p>
       </footer>
     </div>
   )

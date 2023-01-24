@@ -45,7 +45,9 @@ const LoginPage = () => {
                         }
                     </div>
                 </div>
-
+                <section className={styles.recuperar}>
+                    <p>Recuperar contraseña: <a href="https://accesa.me/contacto.php">Accesa.me</a></p>                   
+                </section>
             </main>
         </>
     )
